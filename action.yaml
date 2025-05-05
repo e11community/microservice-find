@@ -1,0 +1,15 @@
+name: 'Microservice Finder'
+description: 'Find all microservice names in a repo after a actions/checkout step.'
+inputs:
+  exceptions:
+    description: space-delimited list of service names to filter out, i.e. - default operations. Defaults to none.
+    required: false
+  microservices_path:
+    description: 'Grandparent path of `microservices/`. Defaults to "."'
+    required: false
+outputs:
+  microservices:
+    description: 'Discovered microservice names'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

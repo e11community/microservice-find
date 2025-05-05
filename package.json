@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "package": "ncc build",
-    "all": "npm run build && npm run package"
+    "all": "npm run build && npm run package",
+    "rebuild": "([ -d ./dist ] && rm -rf ./dist); ([ -d ./node_modules ] && rm -rf ./node_modules); NPM_CONFIG_UPDATE_NOTIFIER=false npm install --no-fund && tsc -p . && ncc build"
   },
   "keywords": [
     "github-actions",
